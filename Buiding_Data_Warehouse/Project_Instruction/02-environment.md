@@ -31,8 +31,8 @@ Next, we use uv to create an empty project structure. Instead of traditional pyt
 we initialize a clean application workspace:
 
 ```bash
-uv init --app data-warehouse
-cd data-warehouse
+uv init --bare
+
 ```
 
 This generates your initial configuration files, including pyproject.toml.   
