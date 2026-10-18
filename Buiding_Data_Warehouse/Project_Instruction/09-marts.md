@@ -10,6 +10,7 @@ next_url: 09-orchestration.md
 
 This module focuses on building our final **Marts Layer**. While intermediate models organize internal business logic, marts structure the data into a clean **Star Schema** (Dimension and Fact tables) tailored for BI reporting and consumption in Power BI.
 
+
 All models created in this section reside inside the `models/marts/` folder and are materialized as persistent **tables** for optimal query speed.
 
 ---
