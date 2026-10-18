@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: raw_northwind
+    description: "Raw Northwind tables imported from MySQL into  (DuckDB)"
+    database: dev
+    schema: raw  # <-- Changé de "main" vers "raw"
+    tables:
+      - name: customers
+        description: "Customers table"
+      - name: employee_privileges
+        description: "Employee privileges table"
+      - name: employees
+        description: "Employees table"
+      - name: inventory_transaction_types
+        description: "Inventory transaction types table"
+      - name: inventory_transactions
+        description: "Inventory transactions table"
+      - name: invoices
+        description: "Invoices table"
+      - name: order_details
+        description: "Order details table"
+      - name: order_details_status
+        description: "Order details status table"
+      - name: orders
+        description: "Orders table"
+      - name: orders_status
+        description: "Orders status table"
+      - name: orders_tax_status
+        description: "Orders tax status table"
+      - name: privileges
+        description: "System privileges table"
+      - name: products
+        description: "Products table"
+      - name: purchase_order_details
+        description: "Purchase order details table"
+      - name: purchase_order_status
+        description: "Purchase order status table"
+      - name: purchase_orders
+        description: "Purchase orders table"
+      - name: sales_reports
+        description: "Sales reports table"
+      - name: shippers
+        description: "Shippers table"
+      - name: strings
+        description: "Internationalization strings table"
+      - name: suppliers
+        description: "Suppliers table"

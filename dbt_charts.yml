@@ -1,0 +1,5 @@
+sources:
+  analytics:
+    type: dbt_profile
+    profile: northwind_dw  # Le nom du profil dans votre profiles.yml
+    target: dev       # Le target pointant vers DuckDB

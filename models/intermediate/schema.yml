@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_orders__enriched
+    description: "Commandes enrichies avec les informations des clients et des employés."
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande."
+        tests:
+          - unique
+          - not_null
+
+  - name: int_order_items
+    description: "Lignes de commande enrichies avec les produits et calcul du montant total."
+    columns:
+      - name: order_detail_id
+        description: "Identifiant unique de la ligne de détail de commande."
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,103 @@
+title: "Northwind Business Executive Overview"
+source: analytics
+
+queries:
+  # 1. High-level KPIs from Fact
+  kpi_metrics:
+    sql: |
+      select
+        round(sum(quantity * unit_price * (1 - discount)), 2) as total_revenue,
+        count(distinct order_id) as total_orders,
+        round(sum(quantity * unit_price * (1 - discount)) / count(distinct order_id), 2) as avg_order_value
+      from {{ ref('fct_sales') }}
+
+  # 2. Revenue Trend over time
+  monthly_revenue:
+    sql: |
+      select 
+        date_trunc('month', order_date) as sales_month,
+        round(sum(quantity * unit_price * (1 - discount)), 2) as total_revenue
+      from {{ ref('fct_sales') }}
+      group by 1
+      order by 1
+
+  # 3. Sales Breakdown by Product Category (Fact + Dim Product)
+  sales_by_category:
+    sql: |
+      select 
+        p.category,
+        round(sum(f.quantity * f.unit_price * (1 - f.discount)), 2) as category_revenue
+      from {{ ref('fct_sales') }} f
+      join {{ ref('dim_products') }} p on f.product_id = p.product_id
+      group by 1
+      order by 2 desc
+      limit 10
+
+  # 4. Top Sales Representatives Performance (Fact + Dim Employee)
+  sales_by_employee:
+    sql: |
+      select 
+        e.employee_full_name,
+        round(sum(f.quantity * f.unit_price * (1 - f.discount)), 2) as total_sales
+      from {{ ref('fct_sales') }} f
+      join {{ ref('dim_employees') }} e on f.employee_id = e.employee_id
+      group by 1
+      order by 2 desc
+
+charts:
+  # KPI Cards (using label instead of title for type: kpi)
+  kpi_total_revenue:
+    label: "Total Revenue ($)"
+    type: kpi
+    query: kpi_metrics
+    value: total_revenue
+
+  kpi_total_orders:
+    label: "Total Orders"
+    type: kpi
+    query: kpi_metrics
+    value: total_orders
+
+  kpi_aov:
+    label: "Avg Order Value ($)"
+    type: kpi
+    query: kpi_metrics
+    value: avg_order_value
+
+  # Visualizations (using title for standard charts)
+  revenue_trend:
+    title: "Monthly Revenue Trend"
+    type: line
+    query: monthly_revenue
+    x: sales_month
+    y: total_revenue
+
+  category_bar:
+    title: "Revenue by Product Category"
+    type: bar
+    query: sales_by_category
+    x: category
+    y: category_revenue
+
+  employee_bar:
+    title: "Sales Performance by Employee"
+    type: bar
+    query: sales_by_employee
+    x: employee_full_name
+    y: total_sales
+
+rows:
+  - title: "Executive Highlights"
+    cols:
+      - kpi_total_revenue
+      - kpi_total_orders
+      - kpi_aov
+
+  - title: "Sales Analysis"
+    cols:
+      - revenue_trend
+      - category_bar
+
+  - title: "Team Performance"
+    cols:
+      - employee_bar

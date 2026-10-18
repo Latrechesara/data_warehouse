@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Nettoyage et typage de la table clients Northwind"
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_employees
+    description: "Nettoyage et typage de la table employés Northwind"
+    columns:
+      - name: employee_id
+        description: "Identifiant unique de l'employé"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_products
+    description: "Nettoyage et typage de la table produits Northwind"
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: "Nettoyage et typage de la table commandes Northwind"
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_order_details
+    description: "Nettoyage et typage des lignes de commande Northwind"
+    columns:
+      - name: order_detail_id
+        description: "Identifiant unique de la ligne de commande"
+        tests:
+          - unique
+          - not_null
