@@ -1,5 +1,5 @@
 ---
-video_url: "https://www.youtube.com/watch?v=LIEN_DE_TA_VIDEO_ICI"
+video_url: "https://www.youtube.com/watch?v=ko2DRqu-3OQ"
 prev_url: 07-dbt-shemas-and-tests.md
 next_url: 09-marts.md
 ---
