@@ -32,6 +32,8 @@ Welcome to your new dbt project!
 </p>
 
 
+The folder Building Data Warehouse contains instructions, to make the project run and build it.
+Also another folder inside Building_Data_Warehouse contains the data for the project.
 
 
 
@@ -44,3 +46,5 @@ Welcome to your new dbt project!
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+Happy Learning and building
