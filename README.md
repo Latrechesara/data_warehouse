@@ -1,4 +1,10 @@
 Welcome to your new dbt project!
+# Modern Datawarehouse
+
+<p align="center">
+
+<img width="662" height="532" alt="kl drawio" src="https://github.com/user-attachments/assets/cebf7ed7-7520-4607-be82-a92c2c4b615f" />
+<p />
 
 ## 🛠️ Built With
 
@@ -24,6 +30,8 @@ Welcome to your new dbt project!
   <!-- Business Intelligence -->
   <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
 </p>
+
+
 
 
 
