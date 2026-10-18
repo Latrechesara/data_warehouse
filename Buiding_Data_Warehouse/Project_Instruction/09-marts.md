@@ -1,6 +1,6 @@
 ---
-video_url: "https://www.youtube.com/watch?v=LIEN_DE_TA_VIDEO_ICI"
-prev_url: 07-intermediate.md
+video_url: "https://www.youtube.com/watch?v=BUlmVbdYfDs&feature=youtu.be"
+prev_url: 07-intermediate-layer.md
 next_url: 09-orchestration.md
 ---
 
