@@ -137,3 +137,6 @@ dct render charts/analytics.yml --format html --output target/index.html
 ```
 
 This generates a portable `index.html` file inside your `target/` directory, ready to be served via GitHub Pages!
+<img width="1847" height="856" alt="image" src="https://github.com/user-attachments/assets/c482f515-74c7-4221-a01e-7c3b57d36694" />
+<img width="1882" height="822" alt="image" src="https://github.com/user-attachments/assets/6ebbf47c-32c9-4bfe-911f-c57b3f8fe85c" />
+
